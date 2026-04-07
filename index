@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para alguien muy especial 💖</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    .contenedor {
+        text-align: center;
+        background: white;
+        padding: 40px;
+        border-radius: 25px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        animation: aparecer 2s ease;
+        max-width: 500px;
+    }
+
+    h1 {
+        color: #ff4b5c;
+        animation: latido 1.5s infinite;
+    }
+
+    p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 20px;
+        background: #ff4b5c;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff1f3d;
+        transform: scale(1.1);
+    }
+
+    .extra {
+        display: none;
+        margin-top: 20px;
+        animation: aparecer 2s ease;
+    }
+
+    @keyframes aparecer {
+        from { opacity: 0; transform: scale(0.5); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes latido {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .corazon {
+        position: absolute;
+        color: red;
+        animation: flotar 6s linear infinite;
+    }
+
+    @keyframes flotar {
+        from {
+            transform: translateY(100vh);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-10vh);
+            opacity: 0;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+    <h1>💖 Para ti 💖</h1>
+
+    <p>
+        Hola... 💌 <br><br>
+
+        No sé exactamente cómo empezar esto, pero sí sé algo:  
+        quería dedicarte unas palabras porque eres alguien muy especial para mí 🌸 <br><br>
+
+        A veces en la vida aparecen personas que sin darse cuenta  
+        cambian todo… y tú eres una de ellas ✨ <br><br>
+
+        Tu forma de ser, tu manera de hablar, incluso esos pequeños detalles  
+        hacen que todo sea diferente 💕 <br><br>
+
+        Gracias por existir, por estar, por ser tú 💖
+    </p>
+
+    <button onclick="mostrarMensaje()">Haz clic aquí 💌</button>
+
+    <div class="extra" id="mensajeExtra">
+        <p>
+            Solo quería que supieras algo más... 🥺 <br><br>
+
+            Eres una persona increíble, única y muy valiosa 💎 <br><br>
+
+            Nunca dudes de lo que vales, porque vales muchísimo 🌟 <br><br>
+
+            Y pase lo que pase…  
+            siempre vas a ser alguien importante para mí 💞 <br><br>
+
+            💖 Gracias por estar en mi vida 💖
+        </p>
+    </div>
+</div>
+
+<!-- Música (puedes cambiar el link si quieres otra canción) -->
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function mostrarMensaje() {
+    document.getElementById("mensajeExtra").style.display = "block";
+}
+
+// corazones animados
+function crearCorazon() {
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "❤️";
+
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.fontSize = (Math.random() * 25 + 10) + "px";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 6000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
